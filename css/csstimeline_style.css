@@ -1,0 +1,272 @@
+/* -------------------------------------
+ * For horizontal version, set the
+ * $vertical variable to false
+ * ------------------------------------- */
+/* -------------------------------------
+ * General Style
+ * ------------------------------------- */
+/*@import url(http://fonts.googleapis.com/css?family=Noto+Sans); */
+
+/* -------------------------------------
+ * timeline
+ * ------------------------------------- */
+#timeline {
+  list-style: none;
+  margin: 50px 0 30px 100px;
+  padding-left: 30px;
+  border-left: 8px solid gray;
+}
+#timeline li {
+  /*margin: 40px 0; */
+  position: relative;
+}
+#timeline p {
+  margin: 0 0 15px;
+  font-size: 10pt;
+}
+
+.date {
+  margin-top: -10px;
+  top: 50%;
+  left: -138px;
+  font-size: 0.9em;
+  line-height: 12pt;
+  position: absolute;
+}
+
+.circle {
+  margin-top: -10px;
+  top: 50%;
+  left: -44px;
+  width: 10px;
+  height: 10px;
+  background: #48b379;
+  border: 5px solid #eee9dc;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+}
+
+.post .content {
+  max-height: 20px;
+  padding: 50px 20px 0;
+  border-color: transparent;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 0.5em;
+  position: relative;
+}
+.post .content:before, .post .content:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border: solid transparent;
+  position: absolute;
+  /* pointer-events: none; */
+  right: 100%;
+}
+.post .content:before {
+  border-right-color: inherit;
+  border-width: 20px;
+  top: 50%;
+  margin-top: -20px;
+}
+.post .content:after {
+  border-right-color: transparent;
+  border-width: 17px;
+  top: 50%;
+  margin-top: -17px;
+}
+.post .content p {
+  max-height: 0;
+  color: transparent;
+  overflow: hidden;
+  font-size: 10pt;
+}
+
+.post .content img {
+ float:right;
+ margin-left:20px;
+}
+
+.relative label {
+  font-size: 1.0em;
+  position: absolute;
+  z-index: 100;
+  cursor: pointer;
+  top: 22px;
+  transition: transform 0.2s linear;
+}
+
+.radio {
+  display: none;
+}
+
+.radio:checked + .relative label {
+  cursor: auto;
+  transform: translate(40px);
+  webkit-transform: translate(40px);
+  ms-transform: translate(40px);
+}
+.radio:checked + .relative .circle {
+  background: #f98262;
+}
+.radio:checked ~ .content {
+  max-height: 420px;
+  border-color: #eee9dc;
+  margin-right: 20px;
+  transform: translateX(20px);
+  ms-transform: translateX(20px);
+  webkit-transform: translateX(20px);
+  transition: max-height 0.4s linear, border-color 0.5s linear, transform 0.2s linear;
+  font-size:11pt;
+  line-height:14pt;
+}
+.radio:checked ~ .content p {
+  max-height: 420px;
+  color: gray;
+  transition: color 0.3s linear 0.3s;
+}
+.ctspace {
+  padding-top:1px;
+  padding-bottom:1px;
+}
+
+.content_body {
+  max-height: 170px;
+  overflow-y: auto;
+}
+.radio:checked ~ .content {
+  max-height:240px;
+}
+
+.radio:checked ~ .content p{
+  max-height: none;
+}
+
+/* -------------------------------------
+ * mobile phones (vertical version only)
+ * @media screen and (max-width: 767px) {
+ * ------------------------------------- */
+
+@media screen and (max-width: 767px) {
+
+#timeline {
+  list-style: none;
+  margin: 50px 0 30px 100px;
+  padding-left: 30px;
+  border-left: 8px solid gray;
+} 
+#timeline li {
+  /*margin: 40px 0; */
+  position: relative;
+} 
+#timeline p {
+  margin: 0 0 15px;
+  font-size: 10pt;
+} 
+  
+.date {
+  margin-top: -10px;
+  top: 50%;
+  left: -138px;
+  font-size: 0.9em;
+  line-height: 12pt;
+  position: absolute;
+} 
+  
+.circle { 
+  margin-top: -10px;
+  top: 50%;
+  left: -44px;
+  width: 10px;
+  height: 10px;
+  background: #48b379;
+  border: 5px solid #eee9dc;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+} 
+  
+.post .content {
+  max-height: 20px;
+  padding: 50px 20px 0;
+  border-color: transparent;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 0.5em;
+  position: relative;
+} 
+.post .content:before, .post .content:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border: solid transparent;
+  position: absolute;
+  /* pointer-events: none; */
+  right: 100%;
+} 
+.post .content:before {
+  border-right-color: inherit;
+  border-width: 20px;
+  top: 50%; 
+  margin-top: -20px;
+} 
+.post .content:after {
+  border-right-color: transparent;
+  border-width: 17px; 
+  top: 50%;
+  margin-top: -17px;
+} 
+.post .content p {
+  max-height: 0;
+  color: transparent; 
+  overflow: hidden;
+  font-size: 10pt;
+} 
+  
+.post .content img {
+ float:right;
+ margin-left:20px;
+} 
+  
+.relative label {
+  font-size: 1.0em;
+  position: absolute;
+  z-index: 100;
+  cursor: pointer;
+  top: 22px;
+  transition: transform 0.2s linear;
+}
+  
+.radio {
+  display: none;
+} 
+
+ .radio:checked ~ .content {
+  max-height: 420px;
+  border-color: white;
+  margin-right: 0px;
+  transition: max-height 0.4s linear, border-color 0.5s linear, transform 0.2s linear;
+  font-size:12pt;
+  line-height:14pt;
+  width:120%;
+  background-color:white;
+  padding-top:60px;
+  margin-left:-148px;
+  }
+
+ .radio:checked + .relative label {
+   cursor: auto;
+   width:120%;
+   padding-bottom:6px;
+   padding-top:12px;
+   margin-left:-144px;
+ }
+
+ .radio:checked + .relative .date {
+  position:relative;
+ }
+
+}
+
